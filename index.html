@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عيد أضحى مبارك — عائلة الحاج عبدالمحسن أحمد</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold-neon: #ffd666;
+  --gold-glow: rgba(255, 214, 102, 0.35);
+  --cyan-neon: #00e5ff;
+  --cyan-glow: rgba(0, 229, 255, 0.2);
+  --card-bg: rgba(9, 17, 36, 0.6);
+  --text-main: #ffffff;
+  --text-muted: #8da2bd;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+ 
+body {
+  font-family: 'Tajawal', sans-serif;
+  /* اللون الجديد المطابق تماماً لعمق ودرجة سماء الليل الداكنة في تصميمك الثاني */
+  background: #040914;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+/* الخلفية الجديدة الفخمة المودرن المتناسقة لربط الشغل ببعضه */
+.modern-bg {
+  position: fixed; 
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, #0a162e 0%, #040914 70%, #02050b 100%);
+  z-index: 0; 
+  overflow: hidden;
+}
+
+/* تأثير بريق النجوم الناعم الهادئ في السماء الداكنة */
+.star-fields {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: 
+    radial-gradient(circle at 20% 30%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 75% 15%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 50% 60%, #fff 1.5px, transparent 1.5px),
+    radial-gradient(circle at 85% 70%, #fff 1px, transparent 1px),
+    radial-gradient(circle at 15% 75%, #fff 1.2px, transparent 1.2px);
+  background-size: 300px 300px;
+}
+
+/* ظلال نيونية خفيفة جداً ومتحركة بالخلفية لعمق جمالي مودرن */
+.modern-bg::before {
+  content: '';
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.25;
+  background: #0c234a;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Silhouette Mosque ── */
+.mosque-bg {
+  position: fixed; bottom:0; left:0; right:0; height:180px; z-index:1;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.mosque-bg svg { width:100%; height:100%; }
+ 
+/* ── Wrapper ── */
+.wrapper {
+  position: relative; z-index:10;
+  max-width: 540px; margin: 0 auto;
+  padding: 0 16px 40px;
+  display: flex; flex-direction: column; align-items: center;
+  width: 100%;
+}
+ 
+/* ── Brand header ── */
+.brand-header {
+  width: 100%; display:flex; align-items:center; justify-content:center;
+  padding: 20px 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.brand-logo {
+  width: 28px; height: 28px;
+  filter: drop-shadow(0 0 8px var(--cyan-glow));
+}
+.brand-name {
+  font-family: 'Amiri', serif;
+  font-size: 16px;
+  color: var(--cyan-neon);
+  text-shadow: 0 0 8px var(--cyan-glow);
+}
+ 
+/* ── Lanterns ── */
+.lanterns {
+  position: absolute; top: 75px; left: 0; right: 0;
+  display: flex; justify-content: space-between; padding: 0 24px;
+  pointer-events: none;
+}
+.lantern { 
+  animation: swing 3.5s ease-in-out infinite; 
+  transform-origin: top center; 
+  filter: drop-shadow(0 0 12px var(--gold-glow));
+}
+.lantern:nth-child(2){ animation-delay:-1.75s; }
+@keyframes swing { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+ 
+/* ── Moon ── */
+.moon-wrap {
+  margin-top: 10px; margin-bottom: 15px;
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+ 
+/* ── Title ── */
+.eid-title {
+  font-family: 'Amiri', serif;
+  font-size: clamp(40px, 9.5vw, 56px);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  text-align: center; line-height: 1.2; margin-bottom: 4px;
+}
+.family-label { 
+  font-size:13px; 
+  color:var(--text-muted); 
+  margin-bottom:4px; 
+  text-align:center; 
+  letter-spacing: 0.5px;
+}
+.family-name {
+  font-family:'Amiri',serif; 
+  font-size:clamp(22px, 5.5vw, 28px);
+  color:var(--gold-neon); 
+  text-align:center; 
+  margin-bottom:25px;
+  font-weight: 700;
+  text-shadow: 0 0 12px var(--gold-glow);
+}
+.family-name::before, .family-name::after { content:' ✦ '; opacity:.6; color: var(--cyan-neon); }
+
+/* ── برواز صورة الجد المربع المودرن الكبير والفخم (بدون نصوص تماماً) ── */
+.grandfather-photo-container {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin-bottom: 30px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* وهج خلفي ناعم وراقٍ يبرز هيبة المربع الملكي */
+.grandfather-photo-container::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 20px;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 75%);
+  animation: photoGlow 3s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes photoGlow {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1.03); }
+}
+
+/* البرواز المربع المودرن بزوايا انسيابية متناسقة مع الكروت الأخرى */
+.grandfather-photo-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: 2px solid var(--gold-neon);
+  overflow: hidden;
+  background: rgba(9, 17, 36, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 214, 102, 0.2);
+}
+
+/* صورة الجد بوضوح كريستالي فائق الحواف وملائمة مثالية للمربع */
+.grandfather-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* ضبط المقاس للشاشات الكبيرة والتابلت ليظهر فخماً ومناسباً وقوياً */
+@media (min-width: 768px) {
+  .grandfather-photo-container { width: 190px; height: 190px; }
+}
+
+/* ── Takbeer الزجاجي المودرن ── */
+.takbeer-wrap {
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius:30px; padding:14px 22px; margin-bottom:30px;
+  cursor:pointer; transition:all .3s ease; max-width:440px; width:100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.takbeer-wrap:hover { 
+  border-color: var(--cyan-neon);
+  box-shadow: 0 0 15px var(--cyan-glow);
+  transform: translateY(-2px);
+}
+.takbeer-text { font-size:13.5px; color:#ffffff; font-family:'Amiri',serif; line-height: 1.4; text-align: center; }
+.audio-icon { font-size:18px; color: var(--cyan-neon); filter: drop-shadow(0 0 5px var(--cyan-glow)); transition: transform 0.3s ease; }
+.playing .audio-icon { animation: pulseIcon 1s infinite alternate; }
+@keyframes pulseIcon { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.2); opacity: 1; } }
+ 
+/* ── Sheep section ── */
+.sheep-section {
+  display:flex; flex-direction:column; align-items:center;
+  margin-bottom: 30px;
+  z-index: 5;
+}
+.sheep-wrap {
+  animation: sheepBob 2.5s ease-in-out infinite;
+  cursor: pointer; position: relative;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
+}
+@keyframes sheepBob { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-5px) rotate(0.5deg)} }
+ 
+.sheep-sound-hint {
+  font-size:13px; color:var(--text-muted); margin-top:10px; text-align:center;
+}
+.sheep-sound-hint span { color:var(--cyan-neon); text-shadow: 0 0 5px var(--cyan-glow); }
+ 
+/* ── Countdown الكرت الزجاجي المودرن ── */
+.countdown-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius:24px; padding:24px; margin-bottom:32px;
+  text-align:center; width:100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.countdown-title {
+  font-size:13px; color:var(--text-muted); margin-bottom:18px;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.countdown-title span { color:#ffffff; font-weight: 500; }
+.countdown-boxes { display:flex; justify-content:center; gap:12px; }
+
+.cnt-box {
+  background: rgba(255, 255, 255, 0.02); 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius:16px; padding:12px 10px; min-width:72px;
+  transition: border-color 0.3s;
+}
+.countdown-section:hover .cnt-box {
+  border-color: rgba(0, 229, 255, 0.12);
+}
+.cnt-num { font-size:30px; font-weight:700; color:var(--gold-neon); line-height:1.1; text-shadow: 0 0 8px var(--gold-glow); }
+.cnt-label { font-size:11px; color:var(--text-muted); margin-top:4px; }
+ 
+/* ── CTA زر الانتقال النيوني المبهج ── */
+.cta-btn {
+  display:inline-flex; align-items:center; gap:12px;
+  background: linear-gradient(90deg, #091328, #102142);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: var(--cyan-neon); font-family:'Tajawal',sans-serif;
+  font-size:18px; font-weight:600;
+  padding: 16px 44px; border-radius:50px; cursor:pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition:all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  width:100%; justify-content:center; max-width:360px;
+  text-decoration:none;
+}
+.cta-btn:hover { 
+  border-color: var(--cyan-neon);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+  transform: translateY(-2px); 
+  color: #ffffff;
+}
+ 
+/* ── Footer ── */
+.footer { text-align:center; padding:24px 0 0; font-size:12px; color:rgba(255,255,255,0.25); z-index: 2;}
+.footer span { color:var(--gold-neon); }
+
+@media (min-width: 768px) {
+  .wrapper { padding-top: 30px; }
+  .countdown-section { padding: 30px; }
+  .cnt-box { min-width: 82px; padding: 14px 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="modern-bg">
+  <div class="star-fields"></div>
+</div>
+ 
+<div class="mosque-bg">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#071124">
+      <rect x="30" y="100" width="180" height="120"/>
+      <rect x="90" y="60" width="60" height="50"/>
+      <ellipse cx="120" cy="60" rx="30" ry="20"/>
+      <rect x="112" y="30" width="16" height="35"/>
+      <polygon points="120,10 114,30 126,30"/>
+      <rect x="40" y="80" width="18" height="140"/>
+      <ellipse cx="49" cy="80" rx="9" ry="6"/>
+      <rect x="45" y="65" width="8" height="18"/>
+      <polygon points="49,52 44,65 54,65"/>
+      <rect x="192" y="85" width="18" height="135"/>
+      <ellipse cx="201" cy="85" rx="9" ry="6"/>
+      <rect x="197" y="70" width="8" height="18"/>
+      <polygon points="201,57 196,70 206,70"/>
+      <rect x="1230" y="100" width="180" height="120"/>
+      <rect x="1290" y="60" width="60" height="50"/>
+      <ellipse cx="1320" cy="60" rx="30" ry="20"/>
+      <rect x="1312" y="30" width="16" height="35"/>
+      <polygon points="1320,10 1314,30 1326,30"/>
+      <rect x="1240" y="80" width="18" height="140"/>
+      <ellipse cx="1249" cy="80" rx="9" ry="6"/>
+      <rect x="1245" y="65" width="8" height="18"/>
+      <polygon points="1249,52 1244,65 1254,65"/>
+      <rect x="1382" y="85" width="18" height="135"/>
+      <ellipse cx="1391" cy="85" rx="9" ry="6"/>
+      <rect x="1387" y="70" width="8" height="18"/>
+      <polygon points="1391,57 1386,70 1396,70"/>
+    </g>
+  </svg>
+</div>
+
+<audio id="takbeerAudio" src="takbeer.mp3.mpeg" loop></audio>
+ 
+<div class="wrapper">
+ 
+  
+  <div class="lanterns" aria-hidden="true">
+    <div class="lantern"><svg width="24" height="40" viewBox="0 0 28 44"><line x1="14" y1="0" x2="14" y2="8" stroke="#ffd666" stroke-width="1.5"/><ellipse cx="14" cy="12" rx="7" ry="4" fill="#ffd666" opacity="0.8"/><rect x="7" y="12" width="14" height="20" rx="3" fill="#ffd666" opacity="0.7"/><ellipse cx="14" cy="32" rx="7" ry="4" fill="#ffd666" opacity="0.8"/><rect x="11" y="36" width="6" height="5" fill="#A8832A"/></svg></div>
+    <div class="lantern"><svg width="24" height="40" viewBox="0 0 28 44"><line x1="14" y1="0" x2="14" y2="8" stroke="#ffd666" stroke-width="1.5"/><ellipse cx="14" cy="12" rx="7" ry="4" fill="#ffd666" opacity="0.8"/><rect x="7" y="12" width="14" height="20" rx="3" fill="#ffd666" opacity="0.7"/><ellipse cx="14" cy="32" rx="7" ry="4" fill="#ffd666" opacity="0.8"/><rect x="11" y="36" width="6" height="5" fill="#A8832A"/></svg></div>
+  </div>
+ 
+  <div class="moon-wrap">
+    <svg width="84" height="84" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 15px var(--gold-glow))">
+      <defs>
+        <radialGradient id="moonG" cx="40%" cy="40%">
+          <stop offset="0%" stop-color="#FFE090"/>
+          <stop offset="60%" stop-color="#ffd666"/>
+          <stop offset="100%" stop-color="#A8832A"/>
+        </radialGradient>
+      </defs>
+      <path d="M65,15 A35,35 0 1,0 65,85 A25,25 0 1,1 65,15 Z" fill="url(#moonG)" opacity="0.95"/>
+    </svg>
+  </div>
+ 
+  <div class="eid-title">عيد أضحى مبارَك</div>
+  <div class="family-label">للعائلة الكريمة</div>
+  <div class="family-name">عائلة الحاج عبدالمحسن أحمد</div>
+
+  <div class="grandfather-photo-container">
+    <div class="grandfather-photo-wrap">
+      <img id="grandImg" src="family.png" alt="الحاج عبدالمحسن أحمد"/>
+    </div>
+  </div>
+ 
+  <div class="takbeer-wrap" id="takbeerBtn" onclick="toggleTakbeer()" title="اضغط للاستماع للتكبيرات الحقيقية">
+    <span class="audio-icon">🔊</span>
+    <span class="takbeer-text">الله أكبر، الله أكبر، لا إله إلا الله، الله أكبر، الله أكبر، وللّه الحمد</span>
+  </div>
+ 
+  <div class="sheep-section">
+    <div class="sheep-wrap" onclick="playSheep()" title="اضغط لسماع الفرحة">
+      <svg width="180" height="140" viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="90" cy="82" rx="58" ry="42" fill="#E8E0D0"/>
+        <circle cx="52" cy="68" r="18" fill="#F0EAE0"/>
+        <circle cx="72" cy="58" r="20" fill="#EDE6D8"/>
+        <circle cx="95" cy="55" r="22" fill="#F0EAE0"/>
+        <circle cx="118" cy="60" r="19" fill="#EDE6D8"/>
+        <circle cx="134" cy="72" r="16" fill="#F0EAE0"/>
+        <circle cx="60" cy="85" r="15" fill="#EDE6D8"/>
+        <circle cx="120" cy="88" r="14" fill="#F0EAE0"/>
+        <ellipse cx="90" cy="92" rx="50" ry="32" fill="#DDD5C5"/>
+        <ellipse cx="148" cy="70" rx="24" ry="22" fill="#C8B898"/>
+        <ellipse cx="164" cy="57" rx="8" ry="5" fill="#B8A888" transform="rotate(-20,164,57)"/>
+        <circle cx="156" cy="65" r="4" fill="#3A2A1A"/>
+        <circle cx="157.5" cy="63.5" r="1.2" fill="white"/>
+        <ellipse cx="168" cy="74" rx="5" ry="3.5" fill="#B8A888"/>
+        <path d="M164 78 Q168 81 172 78" fill="none" stroke="#8A6858" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="62" y="118" width="12" height="22" rx="5" fill="#C8B898"/>
+        <rect x="80" y="120" width="12" height="20" rx="5" fill="#C8B898"/>
+        <rect x="98" y="120" width="12" height="20" rx="5" fill="#C8B898"/>
+        <rect x="116" y="118" width="12" height="22" rx="5" fill="#C8B898"/>
+        <rect x="62" y="136" width="12" height="6" rx="3" fill="#5A4A3A"/>
+        <rect x="80" y="136" width="12" height="6" rx="3" fill="#5A4A3A"/>
+        <rect x="98" y="136" width="12" height="6" rx="3" fill="#5A4A3A"/>
+        <rect x="116" y="136" width="12" height="6" rx="3" fill="#5A4A3A"/>
+        <path d="M70 60 Q90 50 110 60" fill="none" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="90" cy="50" r="4" fill="#00e5ff" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="sheep-sound-hint">🐑 اضغط على الخروف <span>للصوت والفرحة</span></div>
+  </div>
+ 
+  <div class="countdown-section">
+    <div class="countdown-title">⏳ متبقي على <span>عيد الأضحى المبارك</span></div>
+    <div class="countdown-boxes">
+      <div class="cnt-box"><div class="cnt-num" id="cnt-d">--</div><div class="cnt-label">يوم</div></div>
+      <div class="cnt-box"><div class="cnt-num" id="cnt-h">--</div><div class="cnt-label">ساعة</div></div>
+      <div class="cnt-box"><div class="cnt-num" id="cnt-m">--</div><div class="cnt-label">دقيقة</div></div>
+      <div class="cnt-box"><div class="cnt-num" id="cnt-s">--</div><div class="cnt-label">ثانية</div></div>
+    </div>
+  </div>
+ 
+  <a class="cta-btn" href="family.html">
+    افتح رسالة العيد 🎁
+  </a>
+ 
+  <div class="footer" style="margin-top:28px">
+    صُنع بالحب للعائلة <span>الحاج عبدالمحسن أحمد</span><br>
+    عيد أضحى مبارك ١٤٤٦ هـ ✦
+  </div>
+</div>
+ 
+<script>
+// Countdown
+function updateCountdown() {
+  const eid = new Date('2026-05-27T06:00:00');
+  const now = new Date();
+  const diff = eid - now;
+  if (diff <= 0) { ['d','h','m','s'].forEach(k => document.getElementById('cnt-'+k).textContent='٠'); return; }
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor((diff%86400000)/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  const toAr = n => String(n).replace(/\d/g, d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+  document.getElementById('cnt-d').textContent=toAr(d);
+  document.getElementById('cnt-h').textContent=toAr(h);
+  document.getElementById('cnt-m').textContent=toAr(m);
+  document.getElementById('cnt-s').textContent=toAr(s);
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+ 
+// تشغيل وإيقاف التكبيرات الحقيقية MP3 الطبيعية
+const audio = document.getElementById('takbeerAudio');
+const btnWrap = document.getElementById('takbeerBtn');
+
+function toggleTakbeer() {
+  if (audio.paused) {
+    audio.play().catch(err => console.log("تحتاج للتفاعل أولاً لتشغيل الصوت"));
+    btnWrap.classList.add('playing');
+  } else {
+    audio.pause();
+    btnWrap.classList.remove('playing');
+  }
+}
+ 
+// الخروف والـ confetti اللطيف كما هو تماماً دون تعديل
+function playSheep() {
+  const msg = new SpeechSynthesisUtterance('كل سنتِاً وأنتَ طيب وبخيرٍ ياغَالِي');
+  msg.lang = 'ar-SA';
+  msg.rate = 0.85;
+  msg.pitch = 1.4;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(msg);
+  launchConfetti();
+}
+ 
+function launchConfetti() {
+  const colors = ['#00e5ff','#ffd666','#FF6B6B','#4ECDC4','#9d00ff'];
+  const shapes = ['circle','rect','star'];
+  const sheep = document.querySelector('.sheep-wrap').getBoundingClientRect();
+  const cx = sheep.left + sheep.width / 2;
+  const cy = sheep.top + sheep.height / 2;
+ 
+  for (let i = 0; i < 60; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      const shape = shapes[Math.floor(Math.random() * shapes.length)];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const size = Math.random() * 10 + 6;
+      const angle = Math.random() * 360;
+      const distance = Math.random() * 180 + 60;
+      const dx = Math.cos(angle * Math.PI / 180) * distance;
+      const dy = Math.sin(angle * Math.PI / 180) * distance - 80;
+      const rotation = Math.random() * 720 - 360;
+      const duration = Math.random() * 800 + 700;
+ 
+      el.style.cssText = `
+        position:fixed; left:${cx}px; top:${cy}px;
+        width:${size}px; height:${size}px; background:${color};
+        border-radius:${shape === 'circle' ? '50%' : shape === 'rect' ? '2px' : '0'};
+        clip-path:${shape === 'star' ? 'polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)' : 'none'};
+        pointer-events:none; z-index:9999;
+        transition: transform ${duration}ms ease-out, opacity ${duration}ms ease-out;
+        transform: translate(0,0) rotate(0deg); opacity:1;
+      `;
+      document.body.appendChild(el);
+ 
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.style.transform = `translate(${dx}px, ${dy}px) rotate(${rotation}deg)`;
+          el.style.opacity = '0';
+        });
+      });
+      setTimeout(() => el.remove(), duration + 100);
+    }, i * 18);
+  }
+}
+</script>
+</body>
+</html>

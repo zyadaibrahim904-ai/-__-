@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رسالة العيد — عائلة الحاج عبدالمحسن أحمد</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  /* تم تعديل الألوان لكسر السواد وإضافة لمسة ليلية بنفسجية فخمة ومبهجة */
+  --dark-bg: #0b091a; 
+  --dark-card: #121026;
+  --text-main: #F5E9C8;
+  --text-muted: #A89060;
+  --glow-color: rgba(201, 168, 76, 0.15);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+ 
+body {
+  font-family:'Tajawal',sans-serif;
+  background: var(--dark-bg);
+  color:var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+/* Stars Background & Twinkling Animation */
+.stars-bg {
+  position:fixed; inset:0;
+  /* تدرج لوني عميق ومضيء متناسق */
+  background: radial-gradient(circle at 50% 50%, #1a153a 0%, #0b091a 70%, #05040d 100%);
+  z-index:0; overflow:hidden;
+}
+
+/* صنع وميض عشوائي للنجوم عبر تقسيمها وتفريق الحركة */
+.stars-bg::before, .stars-bg::after {
+  content:''; position:absolute; inset:0;
+  background-repeat: repeat;
+}
+.stars-bg::before {
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 15%,rgba(255,240,180,.9) 0%,transparent 100%),
+    radial-gradient(2px 2px at 40% 20%,rgba(255,240,180,.8) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 12%,rgba(255,240,180,.9) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 30%,rgba(255,240,180,.6) 0%,transparent 100%),
+    radial-gradient(2px 2px at 75% 40%,rgba(255,240,180,.7) 0%,transparent 100%),
+    radial-gradient(2px 2px at 50% 65%,rgba(255,240,180,.8) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 35% 75%,rgba(255,240,180,.9) 0%,transparent 100%);
+  animation: twinkleOne 4s ease-in-out infinite alternate;
+}
+.stars-bg::after {
+  background-image:
+    radial-gradient(1px 1px at 25% 8%,rgba(255,240,180,.7) 0%,transparent 100%),
+    radial-gradient(1px 1px at 55% 5%,rgba(255,240,180,.6) 0%,transparent 100%),
+    radial-gradient(1px 1px at 85% 18%,rgba(255,240,180,.7) 0%,transparent 100%),
+    radial-gradient(2px 2px at 5% 35%,rgba(255,240,180,.5) 0%,transparent 100%),
+    radial-gradient(1px 1px at 60% 28%,rgba(255,240,180,.9) 0%,transparent 100%),
+    radial-gradient(1px 1px at 20% 60%,rgba(255,240,180,.7) 0%,transparent 100%),
+    radial-gradient(1px 1px at 65% 70%,rgba(255,240,180,.5) 0%,transparent 100%),
+    radial-gradient(2px 2px at 8% 80%,rgba(255,240,180,.6) 0%,transparent 100%),
+    radial-gradient(1.5px 1.5px at 22% 85%,rgba(255,240,180,.8) 0%,transparent 100%),
+    radial-gradient(1px 1px at 72% 82%,rgba(255,240,180,.9) 0%,transparent 100%);
+  animation: twinkleTwo 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkleOne { 0% { opacity: 0.3; } 100% { opacity: 1; } }
+@keyframes twinkleTwo { 0% { opacity: 1; } 100% { opacity: 0.2; } }
+ 
+/* Mosque Background with Light Pulse */
+.mosque-bg { position:fixed; bottom:0; left:0; right:0; height:150px; z-index:1; }
+.mosque-bg svg { width:100%; height:100%; animation: mosquePulse 4s ease-in-out infinite alternate; }
+
+@keyframes mosquePulse {
+  0% { filter: drop-shadow(0 0 2px rgba(201,168,76,0.1)); opacity: 0.8; }
+  100% { filter: drop-shadow(0 0 8px rgba(201,168,76,0.3)); opacity: 1; }
+}
+ 
+/* Wrapper - Responsive Container */
+.wrapper {
+  position:relative; z-index:10;
+  width: 100%;
+  max-width:540px; 
+  margin:0 auto;
+  padding:20px 20px 40px;
+}
+ 
+/* Back button */
+.back-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--text-muted); font-size:14px; text-decoration:none;
+  padding:12px 0; transition:color .3s;
+}
+.back-btn:hover { color:var(--gold); }
+ 
+/* Header */
+.page-header {
+  text-align:center; padding:10px 0 24px;
+}
+.page-icon {
+  font-size:44px; display:block; margin-bottom:8px;
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.page-title {
+  font-family:'Amiri',serif; font-size:clamp(28px, 6vw, 38px);
+  color:var(--gold-light); text-shadow:0 0 15px rgba(201,168,76,.4);
+}
+.page-subtitle { font-size:14px; color:var(--text-muted); margin-top:6px; }
+ 
+/* Message card with Glow Effect */
+.message-card {
+  background: linear-gradient(145deg, #151233 0%, #0f0d26 100%);
+  border: 0.5px solid rgba(201,168,76,.25);
+  border-radius:24px; padding:35px 24px;
+  margin-bottom:24px; position:relative; overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 40px var(--glow-color);
+  animation: cardGlow 8s ease-in-out infinite alternate;
+  text-align: center; /* توسيط محتوى الكرت تلقائياً */
+}
+
+@keyframes cardGlow {
+  0% { box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 30px rgba(201, 168, 76, 0.1); }
+  100% { box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 50px rgba(201, 168, 76, 0.25); }
+}
+
+.ornament {
+  position:absolute; color:rgba(201,168,76,.25);
+  font-size:28px; font-family:'Amiri',serif; line-height:1;
+}
+.ornament.tr { top:16px; right:18px; }
+.ornament.bl { bottom:16px; left:18px; }
+ 
+/* Animated lines Centered with Typography improvements */
+.msg-line {
+  opacity:0; transform:translateY(12px);
+  transition:opacity .6s ease, transform .6s ease;
+  margin-bottom:14px;
+  position:relative; z-index:2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.msg-line.show { opacity:1; transform:translateY(0); }
+ 
+.line-greeting { font-size:16px; color:var(--text-muted); font-weight: 500; }
+.line-to { font-size:14px; color:var(--text-muted); margin-top:6px; }
+
+/* إبراز اسم العائلة بتوسيط وظل ذهبي ناعم وجميل */
+.line-family {
+  font-family:'Amiri',serif; 
+  font-size: clamp(24px, 5vw, 30px); 
+  color:var(--gold);
+  margin-top:6px; margin-bottom:12px;
+  text-shadow: 0 2px 8px rgba(201,168,76,0.35);
+  font-weight: 700;
+}
+.line-body, .line-dua, .line-kol { 
+  font-size:15px; 
+  line-height:1.8; 
+  color:var(--text-main); 
+  opacity:0.95; 
+  text-align:center;
+}
+ 
+/* Divider */
+.msg-divider {
+  display:flex; align-items:center; gap:10px;
+  margin:20px auto; width: 60%; color:rgba(201,168,76,.3); font-size:13px;
+  opacity:0; transition:opacity .6s ease;
+  position:relative; z-index:2;
+}
+.msg-divider.show { opacity:1; }
+.msg-divider::before,.msg-divider::after {
+  content:''; flex:1; height:0.5px; background:rgba(201,168,76,.2);
+}
+ 
+/* Quote — animated */
+.msg-quote {
+  background:rgba(201,168,76,.05);
+  border:0.5px solid rgba(201,168,76,.2);
+  border-radius:14px; padding:18px 20px;
+  font-family:'Amiri',serif; font-size:19px;
+  color:var(--gold-light); text-align:center;
+  margin:20px 0; position:relative;
+  z-index:2; overflow:hidden;
+}
+.msg-quote::before { content:'❝'; position:absolute; top:4px; right:12px; opacity:.3; font-size:22px; }
+.msg-quote::after  { content:'❞'; position:absolute; bottom:4px; left:12px; opacity:.3; font-size:22px; }
+ 
+.quote-text { display:inline; }
+.quote-char { display:inline; opacity:0; animation:charFade .04s ease forwards; }
+@keyframes charFade{to{opacity:1}}
+ 
+/* Signature & Fixed Image Container */
+.signature {
+  display:flex; flex-direction:column; align-items:center;
+  gap:12px; margin-top:24px;
+  opacity:0; transform:translateY(14px);
+  transition:opacity .6s ease, transform .6s ease;
+  position:relative; z-index:2;
+}
+.signature.show { opacity:1; transform:translateY(0); }
+ 
+.sig-photo-container { position:relative; margin-bottom:8px; }
+
+/* الصورة الثابتة: توسيط كامل، جودة واضحة، حجم متناسق غير قابل للتشويه */
+.sig-photo-wrap {
+  width: 95px; height: 95px; 
+  border-radius:50%;
+  border:2.5px solid var(--gold);
+  overflow:hidden;
+  background:rgba(201,168,76,.1);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 20px rgba(201,168,76,.3);
+  margin: 0 auto;
+}
+.sig-photo-wrap img { 
+  width:100%; height:100%; object-fit:cover; display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.sig-photo-placeholder { font-size:36px; color:rgba(201,168,76,.4); }
+.sig-photo-label {
+  position:absolute; bottom:-18px; left:50%; transform:translateX(-50%);
+  font-size:10px; color:var(--text-muted); white-space:nowrap;
+  background:rgba(201,168,76,.15); border:0.5px solid rgba(201,168,76,.2); 
+  border-radius:20px; padding:2px 10px; display: none;
+}
+ 
+.sig-love { font-size:13px; color:var(--text-muted); }
+.sig-name {
+  font-family:'Amiri',serif; font-size:22px; color:var(--gold);
+  font-weight:700; text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+ 
+/* Photos Section (Responsive Fluid Grid) */
+.photos-section {
+  background: var(--dark-card); border:0.5px solid rgba(201,168,76,.2);
+  border-radius:24px; padding:24px; margin-bottom:24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.section-title {
+  text-align:center; font-family:'Amiri',serif;
+  font-size:20px; color:var(--gold); margin-bottom:16px;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+.section-title::before,.section-title::after { content:'✦'; font-size:12px; opacity:.6; }
+
+/* شبكة متجاوبة تضمن التناسق على الموبايل والكمبيوتر */
+.photos-grid { 
+  display:grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap:12px; 
+}
+.photo-slot {
+  aspect-ratio:1; background:rgba(255,255,255,.03);
+  border:1px dashed rgba(201,168,76,.25); border-radius:14px;
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:6px; cursor:pointer; transition:all .3s;
+  overflow:hidden; position:relative;
+}
+.photo-slot:hover { background:rgba(201,168,76,.06); border-color:rgba(201,168,76,.4); }
+.photo-slot img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:14px; }
+.photo-slot input { display:none; }
+.upload-icon { font-size:24px; color:rgba(201,168,76,.35); }
+.upload-text { font-size:11px; color:var(--text-muted); }
+.photos-footer { text-align:center; margin-top:14px; font-size:13px; color:var(--text-muted); }
+.photos-footer span { color:var(--gold); }
+ 
+/* Share Button */
+.share-btn {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  width:100%; padding:14px;
+  background:transparent; border:0.5px solid rgba(201,168,76,.4);
+  border-radius:50px; color:var(--gold);
+  font-family:'Tajawal',sans-serif; font-size:16px;
+  cursor:pointer; transition:all .3s; margin-bottom:12px;
+}
+.share-btn:hover { background:rgba(201,168,76,.08); box-shadow: 0 4px 12px rgba(201,168,76,0.1); }
+ 
+/* Footer */
+.footer { text-align:center; padding:15px 0 0; font-size:12px; color:rgba(168,144,96,.5); z-index: 2; position: relative;}
+.footer span { color:rgba(201,168,76,.5); }
+
+/* تحسينات الشاشات الكبيرة (لابتوب / كمبيوتر) لضمان عدم تمدد النصوص بطريقة مشوهة */
+@media (min-width: 768px) {
+  .wrapper { padding-top: 40px; }
+  .message-card { padding: 45px 40px; }
+  .photos-grid { gap: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="stars-bg"></div>
+ 
+<div class="mosque-bg">
+  <svg viewBox="0 0 1440 180" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="mg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#151233" stop-opacity="0.6"/><stop offset="100%" stop-color="#0b091a" stop-opacity="1"/></linearGradient></defs>
+    <g fill="url(#mg2)" opacity="0.85">
+      <rect x="30" y="80" width="160" height="100"/><rect x="80" y="45" width="60" height="45"/><ellipse cx="110" cy="45" rx="30" ry="20"/><rect x="102" y="18" width="16" height="30"/><polygon points="110,4 104,18 116,18"/>
+      <rect x="40" y="65" width="14" height="115"/><ellipse cx="47" cy="65" rx="7" ry="5"/>
+      <rect x="186" y="70" width="14" height="110"/><ellipse cx="193" cy="70" rx="7" ry="5"/>
+      <rect x="1250" y="80" width="160" height="100"/><rect x="1300" y="45" width="60" height="45"/><ellipse cx="1330" cy="45" rx="30" ry="20"/><rect x="1322" y="18" width="16" height="30"/><polygon points="1330,4 1324,18 1336,18"/>
+      <rect x="1260" y="65" width="14" height="115"/><ellipse cx="1267" cy="65" rx="7" ry="5"/>
+      <rect x="1396" y="70" width="14" height="110"/><ellipse cx="1403" cy="70" rx="7" ry="5"/>
+      <rect x="655" y="110" width="130" height="70"/><rect x="685" y="78" width="70" height="40"/><ellipse cx="720" cy="78" rx="35" ry="20"/><rect x="713" y="56" width="14" height="26"/><polygon points="720,42 714,56 726,56"/>
+    </g>
+    <rect x="0" y="170" width="1440" height="10" fill="#0b091a"/>
+  </svg>
+</div>
+ 
+<div class="wrapper">
+  <a class="back-btn" href="index.html">← العودة للصفحة الرئيسية</a>
+ 
+  <div class="page-header">
+    <span class="page-icon">💌</span>
+    <div class="page-title">رسالة العيد</div>
+    <div class="page-subtitle">من القلب إلى أحبابنا الكرام</div>
+  </div>
+ 
+  <div class="message-card" id="msgCard">
+    <div class="ornament tr">❋</div>
+    <div class="ornament bl">❋</div>
+ 
+    <div class="msg-line" id="l0">
+      <span class="line-greeting">السلام عليكم ورحمة الله وبركاته 🌙</span>
+    </div>
+    <div class="msg-line" id="l1">
+      <span class="line-to">إلى العائلة الكريمة...</span>
+    </div>
+    <div class="msg-line" id="l2">
+      <span class="line-family">عائلة الحاج عبدالمحسن أحمد ❤️</span>
+    </div>
+    <div class="msg-line" id="l3">
+      <span class="line-body">
+        بكلّ الحب والتقدير، وبأصدق الدعوات الطيبة،<br>
+        نُهدي إليكم أطيب التهاني وأجمل الأمنيات<br>
+        بمناسبة عيد الأضحى المبارك 🌙
+      </span>
+    </div>
+    <div class="msg-divider" id="div1">✦ ✦ ✦</div>
+    <div class="msg-line" id="l4">
+      <span class="line-dua">
+        نسأل الله أن يجعل أيامكم مليئة بالفرح والطمأنينة،<br>
+        وأن يديم بيننا المحبة وصلة الرحم، ويجمعنا دائمًا<br>
+        على الخير والود والضحكات الجميلة ❤️
+      </span>
+    </div>
+    <div class="msg-divider" id="div2">✦ ✦ ✦</div>
+    <div class="msg-line" id="l5">
+      <span class="line-kol">
+        كل عام وأنتم بخير، وعيدكم مبارك،<br>
+        وأيامكم سعادة وبركة بإذن الله.
+      </span>
+    </div>
+ 
+    <div class="msg-quote" id="quoteBox" style="opacity:0;transition:opacity .6s ease">
+      <div class="quote-text" id="quoteText"></div>
+    </div>
+ 
+    <div class="signature" id="sig">
+      <div class="sig-photo-container">
+        <div class="sig-photo-wrap" id="photoWrap">
+          <span class="sig-photo-placeholder" id="photoPlaceholder" style="display:none;">👤</span>
+          <img id="sigImg" src="maincopy.png" alt="main" style="display:block;"/>
+        </div>
+      </div>
+      <div class="sig-love">مع خالص الحب والتقدير ❤️</div>
+      <div class="sig-name">المهندس إبراهيم زيادة</div>
+    </div>
+  </div>
+ 
+  <div class="photos-section">
+    <div class="section-title">لحظاتنا الجميلة</div>
+    <div class="photos-grid">
+      <label class="photo-slot" id="pslot0"><div class="upload-icon">📷</div><div class="upload-text">أضف صورة</div><input type="file" accept="image/*" onchange="loadPhoto(this,0)"/></label>
+      <label class="photo-slot" id="pslot1"><div class="upload-icon">📷</div><div class="upload-text">أضف صورة</div><input type="file" accept="image/*" onchange="loadPhoto(this,1)"/></label>
+      <label class="photo-slot" id="pslot2"><div class="upload-icon">📷</div><div class="upload-text">أضف صورة</div><input type="file" accept="image/*" onchange="loadPhoto(this,2)"/></label>
+      <label class="photo-slot" id="pslot3"><div class="upload-icon">📷</div><div class="upload-text">أضف صورة</div><input type="file" accept="image/*" onchange="loadPhoto(this,3)"/></label>
+    </div>
+    <div class="photos-footer">نسأل الله أن يديم المحبة واللمة الجميلة بيننا دائمًا <span>♥</span></div>
+  </div>
+ 
+  <button class="share-btn" onclick="shareLink()">🔗 شارك رسالة العيد مع العائلة</button>
+ 
+  <div class="footer">
+    صُنع بالحب لعائلة <span>الحاج عبدالمحسن أحمد</span><br>
+    عيد أضحى مبارك ١٤٤٦ هـ ✦
+  </div>
+</div>
+ 
+<script>
+const lines = ['l0','l1','l2','l3','div1','l4','div2','l5'];
+const QUOTE = 'العائلة نعمة... واللُمَّةُ أجمل أعيادنا 🌙';
+let step = 0;
+ 
+function showNext() {
+  if (step < lines.length) {
+    const el = document.getElementById(lines[step]);
+    if (el) el.classList.add('show');
+    step++;
+    setTimeout(showNext, step <= 2 ? 600 : 900);
+  } else {
+    setTimeout(animateQuote, 400);
+  }
+}
+ 
+function animateQuote() {
+  const box = document.getElementById('quoteBox');
+  const textEl = document.getElementById('quoteText');
+  box.style.opacity = '1';
+  textEl.innerHTML = '';
+  [...QUOTE].forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = 'quote-char';
+    span.textContent = ch;
+    span.style.animationDelay = (i * 45) + 'ms';
+    textEl.appendChild(span);
+  });
+  setTimeout(() => {
+    document.getElementById('sig').classList.add('show');
+  }, QUOTE.length * 45 + 500);
+}
+ 
+window.addEventListener('load', () => setTimeout(showNext, 600));
+ 
+function loadPhoto(input, idx) {
+  if (!input.files[0]) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const slot = document.getElementById('pslot' + idx);
+    const icon = slot.querySelector('.upload-icon');
+    const text = slot.querySelector('.upload-text');
+    if(icon) icon.style.display = 'none';
+    if(text) text.style.display = 'none';
+    let img = slot.querySelector('img');
+    if (!img) { img = document.createElement('img'); slot.appendChild(img); }
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(input.files[0]);
+}
+ 
+function shareLink() {
+  const url = window.location.href;
+  if (navigator.share) {
+    navigator.share({ title:'رسالة عيد الأضحى', text:'رسالة العيد من المهندس إبراهيم زيادة 🌙', url });
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.querySelector('.share-btn');
+      btn.textContent = '✅ تم نسخ الرابط!';
+      setTimeout(() => btn.textContent = '🔗 شارك رسالة العيد مع العائلة', 2500);
+    });
+  }
+}
+</script>
+</body>
+</html>
